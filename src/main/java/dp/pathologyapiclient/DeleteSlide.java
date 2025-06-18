@@ -11,7 +11,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
-public class GetSlide {
+public class DeleteSlide {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
@@ -32,13 +32,13 @@ public class GetSlide {
             .build();
 
         HttpRequest request = HttpRequest.newBuilder()
-            .GET()
+            .DELETE()
             .uri(URI.create("https://tst-sect-eapp1.eushc.org/SectraPathologyImport/lisdata/v1/slides/" + slideId
                 + (labId != null && labId.length() > 0 && "EmoryQC".equals(labId) ? "?labId=" + labId : "")))
             .header("Accept", "application/json")
             .build();
 
-        System.out.println("GET " + request.uri());
+        System.out.println("DELETE " + request.uri());
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
         System.out.println(response.statusCode());
         if(response.statusCode() == 200) {
