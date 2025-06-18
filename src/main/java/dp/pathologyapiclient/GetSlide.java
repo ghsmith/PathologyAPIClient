@@ -15,7 +15,7 @@ public class GetSlide {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
         
         HttpClient client = HttpClient.newBuilder()
             .authenticator(

@@ -17,7 +17,7 @@ public class PutSlide {
 
     public static void main(String[] args) throws IOException, InterruptedException {
 
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        Gson gson = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
         
         Pattern p = Pattern.compile("^(.*)-(.*)-(.*)-(.*)$");
         Matcher m = p.matcher(args[1]);
