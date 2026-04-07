@@ -33,7 +33,8 @@ public class DeleteSlide {
 
         HttpRequest request = HttpRequest.newBuilder()
             .DELETE()
-            .uri(URI.create("https://prdsectuv.eushc.org/SectraPathologyImport/lisdata/v1/slides/" + slideId
+            //.uri(URI.create("https://prdsectuv.eushc.org/SectraPathologyImport/lisdata/v1/slides/" + slideId
+            .uri(URI.create("https://pathology.emory.cloud.sectra.com/SectraPathologyImport/lisdata/v1/slides/" + slideId
                 + (labId != null && labId.length() > 0 && "EmoryQC".equals(labId) ? "?labId=" + labId : "")))
             .header("Accept", "application/json")
             .build();

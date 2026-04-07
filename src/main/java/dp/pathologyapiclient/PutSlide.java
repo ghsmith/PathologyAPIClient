@@ -47,7 +47,8 @@ public class PutSlide {
 
         HttpRequest request = HttpRequest.newBuilder()
             .PUT(HttpRequest.BodyPublishers.ofString(gson.toJson(newSlide)))
-            .uri(URI.create("https://prdsectuv.eushc.org/SectraPathologyImport/lisdata/v1/slides/" + slideId
+            //.uri(URI.create("https://prdsectuv.eushc.org/SectraPathologyImport/lisdata/v1/slides/" + slideId
+            .uri(URI.create("https://pathology.emory.cloud.sectra.com/SectraPathologyImport/lisdata/v1/slides/" + slideId
                 + (labId != null && labId.length() > 0 && "EmoryQC".equals(labId) ? "?labId=" + labId : "")))
             .header("Content-Type", "application/json")
             .header("Accept", "application/json")
